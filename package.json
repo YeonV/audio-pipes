@@ -5,6 +5,8 @@
   "homepage": "https://yeonv.com/audio-pipes",
   "dependencies": {
     "@babel/core": "7.12.3",
+    "@babel/plugin-proposal-numeric-separator": "^7.16.7",
+    "@babel/plugin-transform-exponentiation-operator": "^7.16.7",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@popperjs/core": "^2.5.4",
     "@restart/hooks": "^0.4.1",
@@ -86,7 +88,8 @@
     "worklet-loader": "^1.0.0"
   },
   "scripts": {
-    "start": "set NODE_OPTIONS=--openssl-legacy-provider; node scripts/start.js",
+    "start": "set NODE_OPTIONS= && node scripts/start.js",
+    "start:original": "set NODE_OPTIONS=--openssl-legacy-provider && node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
@@ -113,6 +116,7 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-transform-exponentiation-operator": "^6.24.1",
     "gh-pages": "^3.1.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.5.2",
@@ -147,7 +151,7 @@
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
-    "testRunner": "/Users/Blade/projects/react-web-audio-graph/node_modules/jest-circus/runner.js",
+    "testRunner": "/Users/Blade/projects/audio-pipes/node_modules/jest-circus/runner.js",
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
@@ -158,7 +162,7 @@
       "^.+\\.module\\.(css|sass|scss)$"
     ],
     "modulePaths": [
-      "/Users/Blade/projects/react-web-audio-graph/src"
+      "/Users/Blade/projects/audio-pipes/src"
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",

@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useSt
 import { Elements, FlowTransform } from "react-flow-renderer";
 import { v4 as uuidv4 } from "uuid";
 import { useProject } from "context/ProjectContext";
+import logo from "logo.svg";
 
 export interface ProjectState {
   elements: Elements;
@@ -24,9 +25,22 @@ const controlsStyles: React.CSSProperties = {
   display: "flex",
   position: "absolute",
   right: "100%",
-  top: -10,
+  top: 80,
   transform: "rotate(-90deg)",
   transformOrigin: "bottom right",
+};
+
+const topbarStyles: React.CSSProperties = {
+  display: "flex",
+  position: "absolute",
+  left: 0,
+  right: 0,
+  top: 0,
+  height: 70,
+  backgroundColor: "#0dbedc",
+  backgroundSize: "25%",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "-5% center",
 };
 
 const getDrawerStyles = (visible: boolean): React.CSSProperties => ({
@@ -107,27 +121,30 @@ function Project() {
   const toggleProjectDrawer = useCallback(() => setVisible(visible => !visible), []);
 
   return (
-    <div style={drawerStyles}>
-      <textarea
-        onChange={onChange}
-        style={textareaStyles}
-        value={JSON.stringify(
-          {
-            elements: elements.map(element => ({ ...element, __rf: undefined })),
-            id,
-            transform,
-          },
-          null,
-          2
-        )}
-      />
-      <div style={controlsStyles}>
-        <button onClick={clearProject} style={{ marginRight: 10 }}>
-          clear
-        </button>
-        <button onClick={toggleProjectDrawer}>{visible ? "hide" : "show"}</button>
+    <>
+      <div style={{ ...topbarStyles, backgroundImage: `url(${logo})` }}></div>
+      <div style={drawerStyles}>
+        <textarea
+          onChange={onChange}
+          style={textareaStyles}
+          value={JSON.stringify(
+            {
+              elements: elements.map(element => ({ ...element, __rf: undefined })),
+              id,
+              transform,
+            },
+            null,
+            2
+          )}
+        />
+        <div style={controlsStyles}>
+          <button onClick={clearProject} style={{ marginRight: 10 }}>
+            clear
+          </button>
+          <button onClick={toggleProjectDrawer}>{visible ? "hide" : "show"}</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

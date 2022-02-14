@@ -7,7 +7,7 @@ import { float32toDb } from "utils/units";
 
 function Gain({ data, id, selected, type: nodeType }: NodeProps) {
   const { gain = 1, onChange, type = SliderType.Log } = data;
-  const title = `Gain: ${float32toDb(gain).toFixed(2)} dB`;
+  const title = `Gain: ${float32toDb(gain).toFixed(2) || 0} dB`;
   useGainNode(id, { gain });
 
   return (
