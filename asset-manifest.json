@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/audio-pipes/static/css/main.69646a15.chunk.css",
-    "main.js": "/audio-pipes/static/js/main.a5dd8ecf.chunk.js",
-    "main.js.map": "/audio-pipes/static/js/main.a5dd8ecf.chunk.js.map",
+    "main.js": "/audio-pipes/static/js/main.33ae5ecc.chunk.js",
+    "main.js.map": "/audio-pipes/static/js/main.33ae5ecc.chunk.js.map",
     "runtime-main.js": "/audio-pipes/static/js/runtime-main.13c9afdd.js",
     "runtime-main.js.map": "/audio-pipes/static/js/runtime-main.13c9afdd.js.map",
     "static/js/2.4bf49d22.chunk.js": "/audio-pipes/static/js/2.4bf49d22.chunk.js",
@@ -48,6 +48,6 @@
     "static/js/runtime-main.13c9afdd.js",
     "static/js/2.4bf49d22.chunk.js",
     "static/css/main.69646a15.chunk.css",
-    "static/js/main.a5dd8ecf.chunk.js"
+    "static/js/main.33ae5ecc.chunk.js"
   ]
 }
