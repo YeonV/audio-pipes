@@ -383,57 +383,57 @@ function drawFrequencyResponse(
   }
 }
 
-function drawBins(
-  context: CanvasRenderingContext2D,
-  bandBins: { frequency: number; freqBins: Uint8Array }[],
-  {
-    min,
-    max,
-    sampleRate,
-  }: {
-    min: number;
-    max: number;
-    sampleRate: number;
-  }
-) {
-  const height = context.canvas.height;
-  const width = context.canvas.width;
+// function drawBins(
+//   context: CanvasRenderingContext2D,
+//   bandBins: { frequency: number; freqBins: Uint8Array }[],
+//   {
+//     min,
+//     max,
+//     sampleRate,
+//   }: {
+//     min: number;
+//     max: number;
+//     sampleRate: number;
+//   }
+// ) {
+//   const height = context.canvas.height;
+//   const width = context.canvas.width;
 
-  context.clearRect(0, 0, width, height);
+//   context.clearRect(0, 0, width, height);
 
-  if (!bandBins.length) {
-    return;
-  } else if (bandBins.length > BAND_COLORS.length) {
-    console.error("Not enough frequency colors");
-    return;
-  }
+//   if (!bandBins.length) {
+//     return;
+//   } else if (bandBins.length > BAND_COLORS.length) {
+//     console.error("Not enough frequency colors");
+//     return;
+//   }
 
-  const bandwidth = sampleRate / 2;
-  const binRangeStart = Math.floor(BIN_COUNT * (min / bandwidth));
-  const binRangeEnd = Math.ceil(BIN_COUNT * (max / bandwidth));
-  const binRangeLength = binRangeEnd - binRangeStart;
+//   const bandwidth = sampleRate / 2;
+//   const binRangeStart = Math.floor(BIN_COUNT * (min / bandwidth));
+//   const binRangeEnd = Math.ceil(BIN_COUNT * (max / bandwidth));
+//   const binRangeLength = binRangeEnd - binRangeStart;
 
-  const binBarWidth = width / binRangeLength;
-  const unclippedHeight = height - 60;
-  const cumulativeHeightsPerBin = generateArray(binRangeLength, () => 0);
+//   const binBarWidth = width / binRangeLength;
+//   const unclippedHeight = height - 60;
+//   const cumulativeHeightsPerBin = generateArray(binRangeLength, () => 0);
 
-  // Draw the frequency bins for this passband
-  for (const [i, { freqBins }] of bandBins.entries()) {
-    const { freqColor } = BAND_COLORS[i]!;
-    context.fillStyle = freqColor;
+//   // Draw the frequency bins for this passband
+//   for (const [i, { freqBins }] of bandBins.entries()) {
+//     const { freqColor } = BAND_COLORS[i]!;
+//     context.fillStyle = freqColor;
 
-    let x = 0; // Reset x
-    const freqRange = freqBins.subarray(binRangeStart, binRangeEnd);
-    for (let i = 0; i < binRangeLength; i++) {
-      const barHeight = unclippedHeight * (freqRange[i] / 255.0);
-      const y = height - barHeight - cumulativeHeightsPerBin[i];
-      context.fillRect(x, y, binBarWidth, barHeight);
+//     let x = 0; // Reset x
+//     const freqRange = freqBins.subarray(binRangeStart, binRangeEnd);
+//     for (let i = 0; i < binRangeLength; i++) {
+//       const barHeight = unclippedHeight * (freqRange[i] / 255.0);
+//       const y = height - barHeight - cumulativeHeightsPerBin[i];
+//       context.fillRect(x, y, binBarWidth, barHeight);
 
-      x += binBarWidth;
-      cumulativeHeightsPerBin[i] += barHeight;
-    }
-  }
-}
+//       x += binBarWidth;
+//       cumulativeHeightsPerBin[i] += barHeight;
+//     }
+//   }
+// }
 
 function drawBinsAsLine(
   context: CanvasRenderingContext2D,

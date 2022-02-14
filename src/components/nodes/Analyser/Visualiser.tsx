@@ -1,6 +1,6 @@
 import { DataType } from "components/nodes/Analyser/index";
 import useAnimationFrame from "hooks/useAnimationFrame";
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import { AnalyserNode } from "utils/audioContext";
 
 interface OwnProps {
