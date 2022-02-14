@@ -82,25 +82,29 @@ body {
 
 .customNode {
   background: #999;
-  border-radius: 4px;
+  border-radius: 15px;
+  border: 0px solid #111;
   color: #fff;
   font-size: 12px;
   line-height: 10px;
+  box-shadow: 0px 0px 5px 1px #0dbedc;
+  margin: 10px;
 }
 
 .selected .customNode {
   background: #777;
+  box-shadow: 0px 0px 8px 3px #0dbedc;
 }
 
 .customNode_header {
   align-items: center;
   background: #444;
-  border-radius: 4px 4px 0 0;
+  border-radius: 15px 15px 0 0;
   display: flex;
   font-weight: bold;
-  height: 20px;
   justify-content: center;
-  padding: 5px 15px;
+  padding: 8px 20px;
+  white-space: nowrap;
 }
 
 .customNode_body {

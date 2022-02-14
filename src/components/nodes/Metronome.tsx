@@ -98,7 +98,7 @@ function Metronome({ data, id, selected, type: nodeType }: NodeProps) {
                 <button
                   key={note}
                   onClick={() => toggleNote(note)}
-                  style={{ ...noteStyle, color: notes.includes(note) ? "#0d0" : "#d00" }}
+                  style={{ ...noteStyle, color: notes.includes(note) ? "#00d" : "#d00" }}
                   title={`${NoteValue[note]} note`}
                 >
                   {NoteSymbol[NoteValue[note] as any]}

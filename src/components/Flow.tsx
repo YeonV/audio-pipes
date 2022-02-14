@@ -109,7 +109,8 @@ function getEdgeWithColor(params: Edge | Connection) {
 
   return Object.assign({}, params, {
     style: {
-      stroke: `#${params.source.substr(-6)}`,
+      // stroke: '#0dbedc',
+      stroke: `#0dbed${params.source.substr(-1)}`,
     },
   });
 }

@@ -18,11 +18,11 @@ function drawTimeDomainData(context: CanvasRenderingContext2D, data: Uint8Array)
   const bufferLength = data.length;
   const sliceWidth = width / bufferLength;
 
-  context.fillStyle = "#001400";
+  context.fillStyle = "#000014";
   context.fillRect(0, 0, width, 256);
 
   context.lineWidth = 2;
-  context.strokeStyle = "#00c800";
+  context.strokeStyle = "#0dbedc";
   context.beginPath();
   context.moveTo(x, height - ((data[0] / 128.0) * height) / 2);
   for (let i = 1; i < bufferLength; i++) {
@@ -40,10 +40,10 @@ function drawFrequencyData(context: CanvasRenderingContext2D, data: Uint8Array) 
   const bufferLength = data.length;
   const barWidth = width / bufferLength;
 
-  context.fillStyle = "#001400";
+  context.fillStyle = "#000014";
   context.fillRect(0, 0, width, height);
 
-  context.fillStyle = "#00c800";
+  context.fillStyle = "#0000c8";
   for (let i = 0; i < bufferLength; i++) {
     const barHeight = height * (data[i] / 255.0);
     const y = height - barHeight;

@@ -18,9 +18,11 @@ function Node({ children, id, inputs, outputs, title, type, ...props }: Props) {
   const { elements, onChangeElementFactory, setElements } = useProject();
   const contextMenu = useContextMenu();
   const node = elements.find(node => node.id === id) as FlowNode;
+  console.log(id)
   const handleStyle = useMemo(
     () => ({
-      background: `#${id.substr(-6)}`,
+      // background: '#0dbedc',
+      background: `#0dbed${id.substr(-1)}`,
     }),
     [id]
   );

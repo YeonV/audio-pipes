@@ -29,7 +29,7 @@ function drawFrequencyResponse(
   const bufferLength = data.length;
   const sliceWidth = width / bufferLength;
 
-  context.fillStyle = '#001400';
+  context.fillStyle = '#000014';
   context.fillRect(0, 0, width, height);
 
   context.lineWidth = 1;
@@ -47,7 +47,7 @@ function drawFrequencyResponse(
   context.closePath();
 
   context.lineWidth = 2;
-  context.strokeStyle = '#00c800';
+  context.strokeStyle = '#0000c8';
   context.beginPath();
   for (let i = 0; i < bufferLength; i++) {
     const y = (data[i] * height) / 2;
