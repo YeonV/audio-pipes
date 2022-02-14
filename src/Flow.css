@@ -1,0 +1,52 @@
+.react-flow__node {
+    border-radius: 50%;
+    border: 5px solid #111;
+    box-shadow: 0px 0px 5px 5px #0dbedc;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.react-flow__node-input,
+.react-flow__node-output,
+.react-flow__node-default {    
+    transition: box-shadow 0.5s ease-in-out;
+}
+.react-flow__node-input.selected, .react-flow__node-input.selected:hover,
+.react-flow__node-output.selected, .react-flow__node-output.selected:hover,
+.react-flow__node-default.selected, .react-flow__node-default.selected:hover {    
+    box-shadow: 0px 0px 5px 5px #ff0072;
+}
+.react-flow__node-default.selectable:hover, .react-flow__node-input.selectable:hover, .react-flow__node-output.selectable:hover {    
+    box-shadow: 0px 0px 5px 5px #ff0072;
+}
+.react-flow__handle-left {
+    width: 30px;
+    height: 15px;
+    border-radius: 7.5px;
+    margin-left: -40px;
+    border: 1px solid #333;
+}
+.react-flow__handle-right {
+    width: 30px;
+    height: 15px;
+    border-radius: 7.5px;
+    margin-right: -40px;
+    border: 1px solid #333;
+}
+.react-flow__handle-right:after {
+    content: '';
+    height: 24px;
+    width: 24px;
+    background: red;
+}
+.react-flow__node-input .react-flow__handle, .react-flow__node-default .react-flow__handle.react-flow__handle-right{
+    background: radial-gradient(circle at 75%,#0dbedc 20%,#111 25%);
+}
+.react-flow__node-output .react-flow__handle, .react-flow__node-default .react-flow__handle.react-flow__handle-left{
+    background: radial-gradient(circle at 25%,#0dbedc 20%,#111 25%);
+}
+.react-flow__edge-path {
+    stroke: #0dbedc;
+}
