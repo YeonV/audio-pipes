@@ -6,7 +6,7 @@ export default function useAnimationFrame(
 ): void {
   const cb = useRef<(elapsedMs: number) => void>();
 
-  // TODO(shyndman): This feels wrong
+  // TODO: This feels wrong
   useEffect(() => {
     cb.current = callback;
   }, [callback]);

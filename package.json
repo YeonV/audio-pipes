@@ -1,8 +1,8 @@
 {
-  "name": "react-web-audio-graph",
+  "name": "audio-pipes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yeonv.github.io/audio-pipes",
+  "homepage": "https://yeonv.com/audio-pipes",
   "dependencies": {
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
@@ -147,7 +147,7 @@
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
-    "testRunner": "/Users/shyndman/dev/react-web-audio-graph/node_modules/jest-circus/runner.js",
+    "testRunner": "/Users/Blade/projects/react-web-audio-graph/node_modules/jest-circus/runner.js",
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
@@ -158,7 +158,7 @@
       "^.+\\.module\\.(css|sass|scss)$"
     ],
     "modulePaths": [
-      "/Users/shyndman/dev/react-web-audio-graph/src"
+      "/Users/Blade/projects/react-web-audio-graph/src"
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
