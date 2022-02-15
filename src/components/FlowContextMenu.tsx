@@ -19,7 +19,10 @@ const items = [
     label: "Sources",
   },
   {
-    items: [{ label: "AudioDevice", node: "Destination" }],
+    items: [
+      { label: "AudioDevice", node: "Destination" },
+      { label: "WLED", node: "Wled" },
+    ],
     label: "Destinations",
   },
   {

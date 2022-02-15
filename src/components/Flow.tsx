@@ -37,6 +37,7 @@ import StereoPanner from "components/nodes/StereoPanner";
 import Transformer from "components/nodes/Transformer";
 import Vocoder from "components/nodes/Vocoder";
 import WaveShaper from "components/nodes/WaveShaper";
+import Wled from "components/nodes/Wled";
 import XorGate from "components/nodes/XorGate";
 import XYPad from "components/nodes/XYPad";
 import { useContextMenu } from "context/ContextMenuContext";
@@ -102,6 +103,7 @@ const nodeTypes = {
   StereoPanner: StereoPanner,
   Transformer: Transformer,
   WaveShaper: WaveShaper,
+  Wled: Wled,
   XorGate: XorGate,
   XYPad: XYPad,
 };
