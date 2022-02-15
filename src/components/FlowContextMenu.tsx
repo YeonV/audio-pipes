@@ -24,7 +24,6 @@ const items = [
   },
   {
     items: [
-      { label: "Aubio", node: "Aubio" },
       { label: "Biquad Filter", node: "BiquadFilter" },
       { label: "Channel Merger", node: "ChannelMerger" },
       { label: "Channel Splitter", node: "ChannelSplitter" },

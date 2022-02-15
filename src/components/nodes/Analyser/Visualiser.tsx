@@ -88,7 +88,13 @@ function Visualiser({ node, paused, type, ...canvasProps }: Props) {
 
   useAnimationFrame(tick, !paused);
 
-  return <canvas ref={canvasRef} style={{ display: "block" }} {...canvasProps} />;
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{ display: "block", borderRadius: 5, marginBottom: 5 }}
+      {...canvasProps}
+    />
+  );
 }
 
 export default React.memo(Visualiser);
