@@ -82,8 +82,8 @@ function AudioBufferSource({ data, id, selected, type }: NodeProps) {
     >
       <div className="customNode_editor nodrag">
         <div className="customNode_item">
-          <button onClick={start}>Play</button>
-          <button onClick={stop}>Stop</button>
+          <button onClick={start}>▶</button>
+          <button onClick={stop}>◽</button>
         </div>
         {selected && (
           <>
@@ -92,7 +92,12 @@ function AudioBufferSource({ data, id, selected, type }: NodeProps) {
             </div>
             <div className="customNode_item">
               <label>
-                <input checked={loop} onChange={() => onChange({ loop: !loop })} title="Loop" type="checkbox" />
+                <input
+                  checked={loop}
+                  onChange={() => onChange({ loop: !loop })}
+                  title="Loop"
+                  type="checkbox"
+                />
                 Loop
               </label>
             </div>

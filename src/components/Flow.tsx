@@ -29,6 +29,8 @@ import OscillatorNote from "components/nodes/OscillatorNote";
 import OutputSwitch from "components/nodes/OutputSwitch";
 import Quantizer from "components/nodes/Quantizer";
 import Rectifier from "components/nodes/Rectifier";
+import Aubio from "components/nodes/Aubio";
+import AudioDeviceSource from "components/nodes/AudioDeviceSource";
 import SampleAndHold from "components/nodes/SampleAndHold";
 import Sign from "components/nodes/Sign";
 import StereoPanner from "components/nodes/StereoPanner";
@@ -64,7 +66,9 @@ const nodeTypes = {
   ADSR: ADSR,
   Analyser: Analyser,
   AndGate: AndGate,
+  Aubio: Aubio,
   AudioBufferSource: AudioBufferSource,
+  AudioDeviceSource: AudioDeviceSource,
   BiquadFilter: BiquadFilter,
   ChannelMerger: ChannelMerger,
   ChannelSplitter: ChannelSplitter,

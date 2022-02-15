@@ -14,15 +14,17 @@ const items = [
       { label: "Noise", node: "Noise" },
       { label: "Oscillator", node: "Oscillator" },
       { label: "Oscillator Note", node: "OscillatorNote" },
+      { label: "AudioDevice", node: "AudioDeviceSource" },
     ],
     label: "Sources",
   },
   {
-    items: [{ label: "Destination", node: "Destination" }],
+    items: [{ label: "AudioDevice", node: "Destination" }],
     label: "Destinations",
   },
   {
     items: [
+      { label: "Aubio", node: "Aubio" },
       { label: "Biquad Filter", node: "BiquadFilter" },
       { label: "Channel Merger", node: "ChannelMerger" },
       { label: "Channel Splitter", node: "ChannelSplitter" },
@@ -69,6 +71,7 @@ const items = [
     items: [
       { label: "Analyser", node: "Analyser" },
       { label: "Meter", node: "Meter" },
+      { label: "Aubio", node: "Aubio" },
     ],
     label: "Analysers",
   },
