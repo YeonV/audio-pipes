@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body {
     background: #050505;
   }
@@ -42,7 +42,7 @@
     background-color: #333;
     color: #fff;
   }
-  body.darkmode button {
+  body.darkmode div:not(.keyboard) > button {
     background-color: #333;
     height: 20px;
     min-width: 40px;
@@ -52,10 +52,10 @@
     margin: 0 2px;
     cursor: pointer;
   }
-  body.darkmode button:hover {
+  body.darkmode div:not(.keyboard) > button:hover {
     border-color: #999;
   }
-}
+} */
 
 body.darkmode {
   background: #050505;
@@ -87,29 +87,23 @@ body.darkmode .contextMenu li:hover .sub li:hover {
 body.darkmode .contextMenu li:hover .sub {
   color: #fff;
 }
-
+body.darkmode textarea {
+  background-color: #333;
+  color: #fff;
+}
 body.darkmode select {
   background-color: transparent;
   color: #fff;
-  padding: 5px 15px;
-  margin: 10px;
-  border-radius: 5px;
 }
 body.darkmode select option {
   background-color: #333;
   color: #fff;
 }
-body.darkmode button {
+body.darkmode div:not(.keyboard) > button {
   background-color: #333;
-  height: 20px;
-  min-width: 40px;
   color: #fff;
-  border: 1px solid #666;
-  border-radius: 5px;
-  margin: 0 2px;
-  cursor: pointer;
 }
-body.darkmode button:hover {
+body.darkmode div:not(.keyboard) > button:hover {
   border-color: #999;
 }
 body {
@@ -121,7 +115,20 @@ body {
   overflow: hidden;
 }
 
-.react-flow__node-ConstantSource {
+body div:not(.keyboard) > button {
+  height: 20px;
+  min-width: 40px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  margin: 0 2px;
+  cursor: pointer;
+}
+body select {
+  padding: 5px 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.react-flow__controls-button .react-flow__node-ConstantSource {
   width: 120px;
 }
 .react-flow__node-Gain {

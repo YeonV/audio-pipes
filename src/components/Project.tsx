@@ -32,6 +32,9 @@ const controlsStyles: React.CSSProperties = {
 
 const topbarStyles: React.CSSProperties = {
   display: "flex",
+  alignItems: "center",
+  justifyContent: "flex-end",
+  paddingRight: "2rem",
   position: "absolute",
   left: 0,
   right: 0,
@@ -44,11 +47,11 @@ const topbarStyles: React.CSSProperties = {
 };
 
 const getDrawerStyles = (visible: boolean): React.CSSProperties => ({
-  height: "100%",
+  height: "calc(100% - 70px)",
   padding: 10,
   position: "absolute",
   right: 0,
-  top: 0,
+  top: 70,
   transform: visible ? "translateX(0)" : "translateX(100%)",
   transition: "transform 0.4s ease",
   width: 400,
@@ -122,7 +125,11 @@ function Project() {
 
   return (
     <>
-      <div style={{ ...topbarStyles, backgroundImage: `url(${logo})` }}></div>
+      <div style={{ ...topbarStyles, backgroundImage: `url(${logo})` }}>
+        <button onClick={()=>{
+          document.querySelectorAll('body')[0].classList.toggle('darkmode')
+        }}>toggle darkmode</button>
+      </div>
       <div style={drawerStyles}>
         <textarea
           onChange={onChange}
