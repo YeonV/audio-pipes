@@ -6,11 +6,19 @@ import { Mode } from "worklets/aubio-processor.types";
 
 function Aubio({ data, id, selected, type }: NodeProps) {
   const { levels = 256, max = 1, min = -1, onChange, mode = Mode.OnSet } = data;
-  useAudioWorkletNode(id, "quantizer-processor", { processorOptions: { levels, max, min } }, [
-    levels,
-    max,
-    min,
-  ]);
+  useAudioWorkletNode(
+    id,
+    "aubio-processor",
+    {
+      processorOptions: {
+        levels,
+        max,
+        min,
+        mode,
+      },
+    },
+    [levels, max, min, mode]
+  );
 
   return (
     <Node
