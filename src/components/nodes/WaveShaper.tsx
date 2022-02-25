@@ -1,6 +1,6 @@
-import React, { useCallback, useContext, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { AudioContextContext } from "context/AudioContextContext";
+import { useAudioContext } from "hooks/state/useAudioContext";
 import Node from "components/Node";
 import useWaveShaperNode from "hooks/nodes/useWaveShaperNode";
 
@@ -19,12 +19,12 @@ function WaveShaper({ data, id, selected, type }: NodeProps) {
   const [curveFn, setCurveFn] = useState(data.curveFn ?? distortion);
   const [lastValidCurveFn, setLastValidCurveFn] = useState(curveFn);
 
-  const context = useContext(AudioContextContext);
+  const { audioContext } = useAudioContext();
   const curve = useMemo(() => {
-    const curve = new Float32Array(context.sampleRate);
+    const curve = new Float32Array(audioContext.sampleRate);
     // eslint-disable-next-line no-new-func
     return new Function("curve", lastValidCurveFn)(curve);
-  }, [context.sampleRate, lastValidCurveFn]);
+  }, [audioContext.sampleRate, lastValidCurveFn]);
 
   // AudioNode
   useWaveShaperNode(id, { curve, oversample });
@@ -32,14 +32,14 @@ function WaveShaper({ data, id, selected, type }: NodeProps) {
   const updateCurve = useCallback(() => {
     try {
       // eslint-disable-next-line no-new-func
-      new Function("curve", curveFn)(new Float32Array(context.sampleRate));
+      new Function("curve", curveFn)(new Float32Array(audioContext.sampleRate));
 
       setLastValidCurveFn(curveFn);
       onChange({ curveFn });
     } catch (e) {
       console.error(e);
     }
-  }, [context.sampleRate, curveFn, onChange]);
+  }, [audioContext.sampleRate, curveFn, onChange]);
 
   return (
     <Node id={id} inputs={["input"]} outputs={["output"]} type={type}>
@@ -56,7 +56,11 @@ function WaveShaper({ data, id, selected, type }: NodeProps) {
             <button onClick={updateCurve}>save</button>
           </div>
           <div className="customNode_item">
-            <select onChange={e => onChange({ oversample: e.target.value })} title="Oversample" value={oversample}>
+            <select
+              onChange={e => onChange({ oversample: e.target.value })}
+              title="Oversample"
+              value={oversample}
+            >
               <option value="none">none</option>
               <option value="2x">2x</option>
               <option value="4x">4x</option>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { ComplexAudioNode, useNode } from "context/NodeContext";
+import { ComplexAudioNode, useNode } from "hooks/state/useNodeStore";
 import Node from "components/Node";
 import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
 import { AudioContext, AudioWorkletNode } from "utils/audioContext";
@@ -36,7 +36,7 @@ function ADSR({ data, id, selected, type }: NodeProps) {
   );
 
   // AudioNode
-  const node = (useNode(
+  const node = useNode(
     id,
     () => ({
       [Parameters.AttackTime]: workletNode.parameters.get(Parameters.AttackTime),
@@ -49,7 +49,7 @@ function ADSR({ data, id, selected, type }: NodeProps) {
       [Parameters.SustainLevel]: workletNode.parameters.get(Parameters.SustainLevel),
     }),
     [mode, sustainOn]
-  ) as unknown) as ADSRNode;
+  ) as unknown as ADSRNode;
 
   // AudioParam
   useEffect(() => void (node[Parameters.AttackTime].value = attackTime), [node, attackTime]);
@@ -60,7 +60,13 @@ function ADSR({ data, id, selected, type }: NodeProps) {
   return (
     <Node
       id={id}
-      inputs={["gate", Parameters.AttackTime, Parameters.DecayTime, Parameters.ReleaseTime, Parameters.SustainLevel]}
+      inputs={[
+        "gate",
+        Parameters.AttackTime,
+        Parameters.DecayTime,
+        Parameters.ReleaseTime,
+        Parameters.SustainLevel,
+      ]}
       outputs={["gain"]}
       title="ADSR"
       type={type}

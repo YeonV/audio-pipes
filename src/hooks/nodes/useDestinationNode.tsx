@@ -1,4 +1,4 @@
-import { useNode } from "context/NodeContext";
+import { useNode } from "hooks/state/useNodeStore";
 
 function useDestinationNode(id: string) {
   // AudioNode

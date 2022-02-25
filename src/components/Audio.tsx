@@ -1,6 +1,6 @@
 /* eslint-disable import/no-webpack-loader-syntax */
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { AudioContextContext } from "context/AudioContextContext";
+import React, { useCallback, useEffect, useState } from "react";
+import { useAudioContext } from "hooks/state/useAudioContext";
 import { AudioContext } from "utils/audioContext";
 
 import ADSRWorkletProcessor from "worklet-loader!worklets/adsr-processor.worklet.ts";
@@ -26,12 +26,7 @@ interface Props {
 
 function Audio({ children }: Props) {
   const [ready, setReady] = useState(false);
-
-  const context = useMemo(() => {
-    try {
-      return new AudioContext();
-    } catch {}
-  }, []);
+  const { audioContext } = useAudioContext();
 
   useEffect(() => {
     const awaitAudioWorkletProcessors = async (context: AudioContext) => {
@@ -60,18 +55,18 @@ function Audio({ children }: Props) {
       setReady(true);
     };
 
-    if (context) {
-      awaitAudioWorkletProcessors(context);
+    if (audioContext) {
+      awaitAudioWorkletProcessors(audioContext);
     }
-  }, [context]);
+  }, [audioContext]);
 
   const resume = useCallback(() => {
-    if (context?.state === "suspended") {
-      context.resume();
+    if (audioContext?.state === "suspended") {
+      audioContext.resume();
     }
-  }, [context]);
+  }, [audioContext]);
 
-  if (!context) {
+  if (!audioContext) {
     return <div>Sorry, but the Web Audio API is not supported by your browser.</div>;
   }
 
@@ -80,11 +75,7 @@ function Audio({ children }: Props) {
     return null;
   }
 
-  return (
-    <div onClick={resume}>
-      <AudioContextContext.Provider value={context}>{children}</AudioContextContext.Provider>
-    </div>
-  );
+  return <div onClick={resume}>{children}</div>;
 }
 
 export default Audio;

@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 import Node from "components/Node";
-import { nodeCleanup } from "components/Nodes";
-import { useNode } from "context/NodeContext";
+import { nodeCleanup } from "hooks/state/useNodeStore";
+import { useNode } from "hooks/state/useNodeStore";
 import useAnalyserNode from "hooks/nodes/useAnalyserNode";
 import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
 import useBiquadFilterNode from "hooks/nodes/useBiquadFilterNode";

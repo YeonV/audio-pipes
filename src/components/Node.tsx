@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo } from "react";
-import { Elements, Handle, Node as FlowNode, NodeProps, Position } from "react-flow-renderer";
+import { Handle, Node as FlowNode, NodeProps, Position } from "react-flow-renderer";
 import { v4 as uuidv4 } from "uuid";
 import { GRID_SIZE } from "components/Flow";
 import { useContextMenu } from "context/ContextMenuContext";
-import { useProject } from "context/ProjectContext";
+import { useProject } from "hooks/state/useProject";
 
 interface Props extends Omit<React.HTMLProps<HTMLDivElement>, "id" | "title"> {
   children?: React.ReactNode;
@@ -15,10 +15,10 @@ interface Props extends Omit<React.HTMLProps<HTMLDivElement>, "id" | "title"> {
 }
 
 function Node({ children, id, inputs, outputs, title, type, ...props }: Props) {
-  const { elements, onChangeElementFactory, setElements } = useProject();
+  const { elements, onChangeElementFactory, addElement } = useProject();
   const contextMenu = useContextMenu();
   const node = elements.find(node => node.id === id) as FlowNode;
-  console.log(id)
+
   const handleStyle = useMemo(
     () => ({
       // background: '#0dbedc',
@@ -34,7 +34,7 @@ function Node({ children, id, inputs, outputs, title, type, ...props }: Props) {
 
     const id = `${type}-${uuidv4()}`;
     const onChange = onChangeElementFactory(id);
-    const newNode = {
+    addElement({
       id,
       data: { ...node.data, onChange },
       type: node.type,
@@ -42,14 +42,9 @@ function Node({ children, id, inputs, outputs, title, type, ...props }: Props) {
         x: node.position.x + GRID_SIZE,
         y: node.position.y + GRID_SIZE,
       },
-    };
-    setElements((elements: Elements) => [...elements, newNode]);
+    });
     contextMenu.hide();
-  }, [contextMenu, onChangeElementFactory, node, setElements, type]);
-
-  const onClick = useCallback(() => {
-    contextMenu.hide();
-  }, [contextMenu]);
+  }, [contextMenu, onChangeElementFactory, node, addElement, type]);
 
   const onContextMenu = useCallback(
     (event: React.MouseEvent<Element, MouseEvent>) => {
@@ -72,7 +67,12 @@ function Node({ children, id, inputs, outputs, title, type, ...props }: Props) {
   );
 
   return (
-    <div className="customNode" onClick={onClick} onContextMenu={onContextMenu} {...props}>
+    <div
+      className="customNode"
+      onClick={() => contextMenu.hide()}
+      onContextMenu={onContextMenu}
+      {...props}
+    >
       <div title={id} className="customNode_header">
         {title ?? type}
       </div>

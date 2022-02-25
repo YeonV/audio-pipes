@@ -1,5 +1,5 @@
 import Node from "components/Node";
-import { useNode } from "context/NodeContext";
+import { useNode } from "hooks/state/useNodeStore";
 import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
 import React, { useEffect } from "react";
 import { NodeProps } from "react-flow-renderer";

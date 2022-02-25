@@ -1,5 +1,5 @@
 import useImmediateUpdateEffect from "hooks/useImmediateUpdateEffect";
-import { useNode } from "context/NodeContext";
+import { useNode } from "hooks/state/useNodeStore";
 import { useEffect } from "react";
 import { TOscillatorType } from "utils/audioContext";
 

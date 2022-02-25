@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { useNode } from "context/NodeContext";
+import { useNode } from "hooks/state/useNodeStore";
 import Node from "components/Node";
 import { NoteSymbol, NoteValue } from "utils/notes";
 import "fonts/bravura/bravura.css";
@@ -25,7 +25,11 @@ function Metronome({ data, id, selected, type: nodeType }: NodeProps) {
       const quarterNoteFrequency = 880;
       const measureDurationInSeconds = quarterNoteDurationInSeconds * beatsPerMeasure;
 
-      const buffer = context.createBuffer(1, context.sampleRate * measureDurationInSeconds, context.sampleRate);
+      const buffer = context.createBuffer(
+        1,
+        context.sampleRate * measureDurationInSeconds,
+        context.sampleRate
+      );
       const channel = buffer.getChannelData(0);
       for (let note of notes) {
         const noteDurationInSeconds = (quarterNoteDurationInSeconds * NoteValue.Quarter) / note;
@@ -66,7 +70,10 @@ function Metronome({ data, id, selected, type: nodeType }: NodeProps) {
   }, [node]);
 
   const toggleNote = useCallback(
-    note => onChange({ notes: notes.includes(note) ? notes.filter((n: number) => n !== note) : notes.concat(note) }),
+    note =>
+      onChange({
+        notes: notes.includes(note) ? notes.filter((n: number) => n !== note) : notes.concat(note),
+      }),
     [notes, onChange]
   );
 
@@ -93,8 +100,16 @@ function Metronome({ data, id, selected, type: nodeType }: NodeProps) {
             />
           </div>
           <div className="customNode_item">
-            <span style={{ alignItems: "center", display: "flex", justifyContent: "space-between" }}>
-              {[NoteValue.Whole, NoteValue.Half, NoteValue.Quarter, NoteValue.Eight, NoteValue.Sixteenth].map(note => (
+            <span
+              style={{ alignItems: "center", display: "flex", justifyContent: "space-between" }}
+            >
+              {[
+                NoteValue.Whole,
+                NoteValue.Half,
+                NoteValue.Quarter,
+                NoteValue.Eight,
+                NoteValue.Sixteenth,
+              ].map(note => (
                 <button
                   key={note}
                   onClick={() => toggleNote(note)}

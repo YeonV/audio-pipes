@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { useNode } from "context/NodeContext";
+import { useNode } from "hooks/state/useNodeStore";
 import Node from "components/Node";
 import useConstantSourceNode from "hooks/nodes/useConstantSourceNode";
 

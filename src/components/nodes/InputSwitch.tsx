@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { useNode } from "context/NodeContext";
+import { useNode } from "hooks/state/useNodeStore";
 import Node from "components/Node";
 import Toggle from "components/controls/Toggle";
 import useGainNode from "hooks/nodes/useGainNode";
@@ -20,7 +20,10 @@ function InputSwitch({ data, id, selected, type: nodeType }: NodeProps) {
     inputBNode.connect(outputNode);
   }, [inputANode, inputBNode, outputNode]);
 
-  const toggleInput = useCallback(() => onChange({ input: input === "A" ? "B" : "A" }), [onChange, input]);
+  const toggleInput = useCallback(
+    () => onChange({ input: input === "A" ? "B" : "A" }),
+    [onChange, input]
+  );
   useEffect(() => {
     if (input === "A") {
       inputANode.gain.setTargetAtTime(1, inputANode.context.currentTime, 0.015);
@@ -44,7 +47,13 @@ function InputSwitch({ data, id, selected, type: nodeType }: NodeProps) {
   );
 
   return (
-    <Node id={id} inputs={["A", "B"]} outputs={["output"]} title={`Input: ${input}`} type={nodeType}>
+    <Node
+      id={id}
+      inputs={["A", "B"]}
+      outputs={["output"]}
+      title={`Input: ${input}`}
+      type={nodeType}
+    >
       {selected && (
         <div className="customNode_editor nodrag">
           <div className="customNode_item">

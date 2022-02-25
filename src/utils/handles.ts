@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { Connection, Edge } from "react-flow-renderer";
-import { AnyAudioNode, isComplexAudioNode, useNodeContext } from "context/NodeContext";
-import { nodeCleanup } from "components/Nodes";
+import { AnyAudioNode, isComplexAudioNode, useNodeStore } from "hooks/state/useNodeStore";
+import { nodeCleanup } from "hooks/state/useNodeStore";
 
 function getChannelIndex(handle: string): number {
   return +(handle.match(/-(\d+)$/)?.[1] ?? 0);
@@ -101,7 +101,7 @@ export function disconnectNodes(
 
 // FIXME This should be handled on changes to ReactFlowRenderer state instead.
 export function useOnConnect() {
-  const { getNode } = useNodeContext();
+  const { getNode } = useNodeStore();
 
   return useCallback(
     (connection: Edge | Connection) => connectNodes(connection, getNode),
@@ -111,14 +111,14 @@ export function useOnConnect() {
 
 // FIXME This should be handled on changes to ReactFlowRenderer state instead.
 export function useOnEdgeRemove() {
-  const { getNode } = useNodeContext();
+  const { getNode } = useNodeStore();
 
   return useCallback((edge: Edge) => disconnectNodes(edge, getNode), [getNode]);
 }
 
 // FIXME This should be handled on changes to ReactFlowRenderer state instead.
 export function useOnNodeRemove() {
-  const { getNode } = useNodeContext();
+  const { getNode } = useNodeStore();
 
   return useCallback((nodeId: string) => nodeCleanup(getNode(nodeId)), [getNode]);
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NodeProps } from "react-flow-renderer";
 import Node from "components/Node";
-import { useNode } from "context/NodeContext";
+import { useNode } from "hooks/state/useNodeStore";
 import { getMedia } from "../../utils/getMedia";
 // import { AudioBufferSourceNode } from "utils/audioContext";
 

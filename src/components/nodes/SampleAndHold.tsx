@@ -1,6 +1,6 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import { useNode } from "context/NodeContext";
+import { useNode } from "hooks/state/useNodeStore";
 import Node from "components/Node";
 import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
 import { Parameters } from "worklets/sample-and-hold-processor.types";
@@ -18,7 +18,15 @@ function SampleAndHold({ id, type }: NodeProps) {
     [workletNode]
   );
 
-  return <Node id={id} inputs={["input", Parameters.HoldTime]} outputs={["output"]} title="Sample/Hold" type={type} />;
+  return (
+    <Node
+      id={id}
+      inputs={["input", Parameters.HoldTime]}
+      outputs={["output"]}
+      title="Sample/Hold"
+      type={type}
+    />
+  );
 }
 
 export default React.memo(SampleAndHold);

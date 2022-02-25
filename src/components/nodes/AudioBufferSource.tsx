@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { useNode } from "context/NodeContext";
+import { useNode } from "hooks/state/useNodeStore";
 import Node from "components/Node";
 import { AudioBufferSourceNode } from "utils/audioContext";
 

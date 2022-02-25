@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NodeProps } from "react-flow-renderer";
 import produce from "immer";
-import { useNode } from "context/NodeContext";
+import { useNode } from "hooks/state/useNodeStore";
 import Node from "components/Node";
 import useBiquadFilterNode from "hooks/nodes/useBiquadFilterNode";
 import useGainNode from "hooks/nodes/useGainNode";
@@ -80,7 +80,12 @@ function Equalizer({ data, id, selected, type }: NodeProps) {
                     max={12}
                     min={-12}
                     onChange={e =>
-                      onChange({ gains: produce(gains, (draft: number[]) => void (draft[index] = +e.target.value)) })
+                      onChange({
+                        gains: produce(
+                          gains,
+                          (draft: number[]) => void (draft[index] = +e.target.value)
+                        ),
+                      })
                     }
                     step={0.1}
                     title={`Gain: ${gains[index]} dB`}

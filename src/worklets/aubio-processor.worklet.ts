@@ -1,5 +1,5 @@
 import StoppableAudioWorkletProcessor from "./StoppableAudioWorkletProcessor";
-import { Mode, Parameters, Stage } from "./aubio-processor.types";
+import { Mode } from "./aubio-processor.types";
 import aubio from "aubiojs";
 // import { exponential, linear, logarithmic } from "utils/scale";
 
