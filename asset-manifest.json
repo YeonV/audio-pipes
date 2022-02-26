@@ -5,8 +5,8 @@
     "main.js.map": "/audio-pipes/static/js/main.97ad44f2.chunk.js.map",
     "runtime-main.js": "/audio-pipes/static/js/runtime-main.dadf4c5c.js",
     "runtime-main.js.map": "/audio-pipes/static/js/runtime-main.dadf4c5c.js.map",
-    "static/js/2.958ecfb7.chunk.js": "/audio-pipes/static/js/2.958ecfb7.chunk.js",
-    "static/js/2.958ecfb7.chunk.js.map": "/audio-pipes/static/js/2.958ecfb7.chunk.js.map",
+    "static/js/2.7fad9ee8.chunk.js": "/audio-pipes/static/js/2.7fad9ee8.chunk.js",
+    "static/js/2.7fad9ee8.chunk.js.map": "/audio-pipes/static/js/2.7fad9ee8.chunk.js.map",
     "static/js/3.5d74c3ec.chunk.js": "/audio-pipes/static/js/3.5d74c3ec.chunk.js",
     "static/js/3.5d74c3ec.chunk.js.map": "/audio-pipes/static/js/3.5d74c3ec.chunk.js.map",
     "25f83a8184c7a4f4d712.worklet.js": "/audio-pipes/25f83a8184c7a4f4d712.worklet.js",
@@ -44,13 +44,13 @@
     "fbff70cf744eb55f2ea0.worklet.js.map": "/audio-pipes/fbff70cf744eb55f2ea0.worklet.js.map",
     "index.html": "/audio-pipes/index.html",
     "static/css/main.7ba0e7ad.chunk.css.map": "/audio-pipes/static/css/main.7ba0e7ad.chunk.css.map",
-    "static/js/2.958ecfb7.chunk.js.LICENSE.txt": "/audio-pipes/static/js/2.958ecfb7.chunk.js.LICENSE.txt",
+    "static/js/2.7fad9ee8.chunk.js.LICENSE.txt": "/audio-pipes/static/js/2.7fad9ee8.chunk.js.LICENSE.txt",
     "static/media/bravura.css": "/audio-pipes/static/media/bravura.e69f6822.woff",
     "static/media/logo.7b27df5c.svg": "/audio-pipes/static/media/logo.7b27df5c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.dadf4c5c.js",
-    "static/js/2.958ecfb7.chunk.js",
+    "static/js/2.7fad9ee8.chunk.js",
     "static/css/main.7ba0e7ad.chunk.css",
     "static/js/main.97ad44f2.chunk.js"
   ]
