@@ -2,7 +2,7 @@
   "name": "audio-pipes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yeonv.com/audio-pipes",
+  "homepage": "https://yeonv.github.io/audio-pipes",
   "dependencies": {
     "@babel/core": "7.12.3",
     "@babel/plugin-proposal-numeric-separator": "^7.16.7",
