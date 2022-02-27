@@ -1,6 +1,6 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
+import Node from "../../components/Node";
 
 function Wled({ id, type, selected }: NodeProps) {
   return (

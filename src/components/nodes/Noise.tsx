@@ -1,8 +1,8 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
-import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
-import { NoiseType } from "worklets/noise-processor.types";
+import Node from "../../components/Node";
+import useAudioWorkletNode from "../../hooks/nodes/useAudioWorkletNode";
+import { NoiseType } from "../../worklets/noise-processor.types";
 
 function Noise({ data, id, selected, type: nodeType }: NodeProps) {
   const { onChange, type = NoiseType.White } = data;

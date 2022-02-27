@@ -1,10 +1,10 @@
-import Node from "components/Node";
-import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
-import useAnimationFrame from "hooks/useAnimationFrame";
+import Node from "../../components/Node";
+import useAudioWorkletNode from "../../hooks/nodes/useAudioWorkletNode";
+import useAnimationFrame from "../../hooks/useAnimationFrame";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { logarithmic } from "utils/scale";
-import { float32toDb } from "utils/units";
+import { logarithmic } from "../../utils/scale";
+import { float32toDb } from "../../utils/units";
 
 const MAX_LEVEL = 6;
 const MIN_LEVEL = -48;

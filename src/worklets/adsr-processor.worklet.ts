@@ -1,6 +1,6 @@
 import StoppableAudioWorkletProcessor from "./StoppableAudioWorkletProcessor";
 import { Mode, Parameters, Stage } from "./adsr-processor.types";
-import { exponential, linear, logarithmic } from "utils/scale";
+import { exponential, linear, logarithmic } from "../utils/scale";
 
 const GATE_OFF = 0;
 const GATE_ON = 1;

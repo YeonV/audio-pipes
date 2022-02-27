@@ -1,8 +1,8 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
-import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
-import { Mode } from "worklets/aubio-processor.types";
+import Node from "../../components/Node";
+import useAudioWorkletNode from "../../hooks/nodes/useAudioWorkletNode";
+import { Mode } from "../../worklets/aubio-processor.types";
 
 function Aubio({ data, id, selected, type }: NodeProps) {
   const { levels = 256, max = 1, min = -1, onChange, mode = Mode.OnSet } = data;

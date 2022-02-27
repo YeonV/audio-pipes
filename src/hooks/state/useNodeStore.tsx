@@ -1,8 +1,8 @@
 import { DependencyList, useEffect, useMemo } from "react";
 import { useStoreState } from "react-flow-renderer";
-import { AudioContext, AudioNode } from "utils/audioContext";
-import { connectNodes, disconnectNodes } from "utils/handles";
-import { useAudioContext } from "hooks/state/useAudioContext";
+import { AudioContext, AudioNode } from "../../utils/audioContext";
+import { connectNodes, disconnectNodes } from "../../utils/handles";
+import { useAudioContext } from "./useAudioContext";
 import create from "zustand";
 
 export type ComplexAudioNode<

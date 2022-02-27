@@ -1,8 +1,8 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
-import useChannelMergerNode from "hooks/nodes/useChannelMergerNode";
-import { channelCounts } from "utils/channels";
+import Node from "../../components/Node";
+import useChannelMergerNode from "../../hooks/nodes/useChannelMergerNode";
+import { channelCounts } from "../../utils/channels";
 
 function ChannelMerger({ data, id, selected, type }: NodeProps) {
   const { inputs = 2, onChange } = data;

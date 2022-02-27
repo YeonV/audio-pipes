@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { ComplexAudioNode, useNode } from "hooks/state/useNodeStore";
-import Node from "components/Node";
-import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
-import { AudioContext, AudioWorkletNode } from "utils/audioContext";
-import { Mode, Parameters } from "worklets/adsr-processor.types";
+import { ComplexAudioNode, useNode } from "../../hooks/state/useNodeStore";
+import Node from "../../components/Node";
+import useAudioWorkletNode from "../../hooks/nodes/useAudioWorkletNode";
+import { AudioContext, AudioWorkletNode } from "../../utils/audioContext";
+import { Mode, Parameters } from "../../worklets/adsr-processor.types";
 
 interface ADSRNode extends Required<ComplexAudioNode<undefined, undefined>> {
   [Parameters.AttackTime]: AudioParam;

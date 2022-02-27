@@ -1,6 +1,6 @@
-import NumericStepper from "components/controls/NumericStepper";
+import NumericStepper from "../../../components/controls/NumericStepper";
 import React, { useCallback } from "react";
-import { dbToFloat32, float32toDb } from "utils/units";
+import { dbToFloat32, float32toDb } from "../../../utils/units";
 import { BandStyle, FilterDescription } from "./types";
 
 type GainChangeHandler = (gain: number) => void;

@@ -1,9 +1,9 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import { useNode } from "hooks/state/useNodeStore";
-import Node from "components/Node";
-import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
-import { Parameters } from "worklets/sample-and-hold-processor.types";
+import { useNode } from "../../hooks/state/useNodeStore";
+import Node from "../../components/Node";
+import useAudioWorkletNode from "../../hooks/nodes/useAudioWorkletNode";
+import { Parameters } from "../../worklets/sample-and-hold-processor.types";
 
 function SampleAndHold({ id, type }: NodeProps) {
   const workletNode = useAudioWorkletNode(`${id}_worklet`, "sample-and-hold-processor");

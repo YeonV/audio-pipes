@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { NodeProps } from 'react-flow-renderer';
-import Node from 'components/Node';
-import useBiquadFilterNode from 'hooks/nodes/useBiquadFilterNode';
-import { BiquadFilterNode, TBiquadFilterType } from 'utils/audioContext';
+import Node from '../../components/Node';
+import useBiquadFilterNode from '../../hooks/nodes/useBiquadFilterNode';
+import { BiquadFilterNode, TBiquadFilterType } from '../../utils/audioContext';
 
 const filtersUsingGain: TBiquadFilterType[] = [
   'lowshelf',

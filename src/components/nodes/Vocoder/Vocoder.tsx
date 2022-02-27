@@ -1,20 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
-import Node from "components/Node";
-import { nodeCleanup } from "hooks/state/useNodeStore";
-import { useNode } from "hooks/state/useNodeStore";
-import useAnalyserNode from "hooks/nodes/useAnalyserNode";
-import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
-import useBiquadFilterNode from "hooks/nodes/useBiquadFilterNode";
-import useGainNode from "hooks/nodes/useGainNode";
-import useAnimationFrame from "hooks/useAnimationFrame";
+import Node from "../../../components/Node";
+import { nodeCleanup } from "../../../hooks/state/useNodeStore";
+import { useNode } from "../../../hooks/state/useNodeStore";
+import useAnalyserNode from "../../../hooks/nodes/useAnalyserNode";
+import useAudioWorkletNode from "../../../hooks/nodes/useAudioWorkletNode";
+import useBiquadFilterNode from "../../../hooks/nodes/useBiquadFilterNode";
+import useGainNode from "../../../hooks/nodes/useGainNode";
+import useAnimationFrame from "../../../hooks/useAnimationFrame";
 import produce from "immer";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { generate, generateArray, zip } from "utils/collections";
-import { noop } from "utils/functions";
-import { dbToFloat32 } from "utils/units";
-import { Parameters } from "worklets/envelope-follower.types";
+import { generate, generateArray, zip } from "../../../utils/collections";
+import { noop } from "../../../utils/functions";
+import { dbToFloat32 } from "../../../utils/units";
+import { Parameters } from "../../../worklets/envelope-follower.types";
 import { BandStrip } from "./BandStrip";
 import color from "color";
 import { BandResponse, BandStyle, FilterDescription } from "./types";

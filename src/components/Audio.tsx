@@ -1,24 +1,24 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import React, { useCallback, useEffect, useState } from "react";
-import { useAudioContext } from "hooks/state/useAudioContext";
-import { AudioContext } from "utils/audioContext";
+import { useAudioContext } from "../hooks/state/useAudioContext";
+import { AudioContext } from "../utils/audioContext";
 
-import ADSRWorkletProcessor from "worklet-loader!worklets/adsr-processor.worklet.ts";
-import AndGateWorkletProcessor from "worklet-loader!worklets/and-gate-processor.worklet.ts";
-import ComparatorWorkletProcessor from "worklet-loader!worklets/comparator-processor.worklet.ts";
-import EnvelopeFollowerWorkletProcessor from "worklet-loader!worklets/envelope-follower.worklet.ts";
-import GateWorkletProcessor from "worklet-loader!worklets/gate-processor.worklet.ts";
-import MeterWorkletProcessor from "worklet-loader!worklets/meter-processor.worklet.ts";
-import NoiseWorkletProcessor from "worklet-loader!worklets/noise-processor.worklet.ts";
-import NotGateWorkletProcessor from "worklet-loader!worklets/not-gate-processor.worklet.ts";
-import OrGateWorkletProcessor from "worklet-loader!worklets/or-gate-processor.worklet.ts";
-import QuantizerWorkletProcessor from "worklet-loader!worklets/quantizer-processor.worklet.ts";
-import RectifierWorkletProcessor from "worklet-loader!worklets/rectifier-processor.worklet.ts";
-import SampleAndHoldWorkletProcessor from "worklet-loader!worklets/sample-and-hold-processor.worklet.ts";
-import SignWorkletProcessor from "worklet-loader!worklets/sign-processor.worklet.ts";
-import TransformerWorkletProcessor from "worklet-loader!worklets/transformer-processor.worklet.ts";
-import XorGateWorkletProcessor from "worklet-loader!worklets/xor-gate-processor.worklet.ts";
-import AubioWorkletProcessor from "worklet-loader!worklets/aubio-processor.worklet.ts";
+import ADSRWorkletProcessor from "worklet-loader!../worklets/adsr-processor.worklet.ts";
+import AndGateWorkletProcessor from "worklet-loader!../worklets/and-gate-processor.worklet.ts";
+import ComparatorWorkletProcessor from "worklet-loader!../worklets/comparator-processor.worklet.ts";
+import EnvelopeFollowerWorkletProcessor from "worklet-loader!../worklets/envelope-follower.worklet.ts";
+import GateWorkletProcessor from "worklet-loader!../worklets/gate-processor.worklet.ts";
+import MeterWorkletProcessor from "worklet-loader!../worklets/meter-processor.worklet.ts";
+import NoiseWorkletProcessor from "worklet-loader!../worklets/noise-processor.worklet.ts";
+import NotGateWorkletProcessor from "worklet-loader!../worklets/not-gate-processor.worklet.ts";
+import OrGateWorkletProcessor from "worklet-loader!../worklets/or-gate-processor.worklet.ts";
+import QuantizerWorkletProcessor from "worklet-loader!../worklets/quantizer-processor.worklet.ts";
+import RectifierWorkletProcessor from "worklet-loader!../worklets/rectifier-processor.worklet.ts";
+import SampleAndHoldWorkletProcessor from "worklet-loader!../worklets/sample-and-hold-processor.worklet.ts";
+import SignWorkletProcessor from "worklet-loader!../worklets/sign-processor.worklet.ts";
+import TransformerWorkletProcessor from "worklet-loader!../worklets/transformer-processor.worklet.ts";
+import XorGateWorkletProcessor from "worklet-loader!../worklets/xor-gate-processor.worklet.ts";
+import AubioWorkletProcessor from "worklet-loader!../worklets/aubio-processor.worklet.ts";
 
 interface Props {
   children: React.ReactNode;

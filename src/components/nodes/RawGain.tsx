@@ -1,6 +1,6 @@
-import NumericStepper from "components/controls/NumericStepper";
-import Node from "components/Node";
-import useGainNode from "hooks/nodes/useGainNode";
+import NumericStepper from "../../components/controls/NumericStepper";
+import Node from "../../components/Node";
+import useGainNode from "../../hooks/nodes/useGainNode";
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
 

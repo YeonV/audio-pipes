@@ -1,5 +1,5 @@
 import React, { useMemo, useRef } from "react";
-import { ContextMenuContext } from "context/ContextMenuContext";
+import { ContextMenuContext } from "../context/ContextMenuContext";
 import { usePopper } from "react-popper";
 import { VirtualElement } from "@popperjs/core";
 

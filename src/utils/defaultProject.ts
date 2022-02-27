@@ -1,4 +1,4 @@
-import { ProjectStateData } from "types/Project";
+import { ProjectStateData } from "../types/Project";
 import { v4 as uuidv4 } from "uuid";
 
 export const getDefaultProject = (): ProjectStateData => ({

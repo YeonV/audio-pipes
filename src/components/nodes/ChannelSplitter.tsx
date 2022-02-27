@@ -1,8 +1,8 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
-import useChannelSplitterNode from "hooks/nodes/useChannelSplitterNode";
-import { channelCounts } from "utils/channels";
+import Node from "../../components/Node";
+import useChannelSplitterNode from "../../hooks/nodes/useChannelSplitterNode";
+import { channelCounts } from "../../utils/channels";
 
 function ChannelSplitter({ data, id, selected, type }: NodeProps) {
   const { onChange, outputs = 2 } = data;

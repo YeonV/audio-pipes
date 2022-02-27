@@ -1,6 +1,6 @@
-import { useNode } from "hooks/state/useNodeStore";
-import useImmediateUpdateEffect from "hooks/useImmediateUpdateEffect";
-import { TBiquadFilterType } from "utils/audioContext";
+import { useNode } from "../../hooks/state/useNodeStore";
+import useImmediateUpdateEffect from "../../hooks/useImmediateUpdateEffect";
+import { TBiquadFilterType } from "../../utils/audioContext";
 
 interface Options {
   detune?: number;

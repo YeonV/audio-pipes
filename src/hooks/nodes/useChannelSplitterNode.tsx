@@ -1,4 +1,4 @@
-import { useNode } from "hooks/state/useNodeStore";
+import { useNode } from "../../hooks/state/useNodeStore";
 
 interface Options {
   outputs?: number;

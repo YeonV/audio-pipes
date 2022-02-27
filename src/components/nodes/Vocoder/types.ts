@@ -1,4 +1,4 @@
-import { TBiquadFilterType } from "utils/audioContext";
+import { TBiquadFilterType } from "../../../utils/audioContext";
 
 export interface FilterDescription {
   hz: number;

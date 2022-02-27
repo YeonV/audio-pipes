@@ -1,5 +1,5 @@
 import StoppableAudioWorkletProcessor from "./StoppableAudioWorkletProcessor";
-import { Mode } from "worklets/rectifier-processor.types";
+import { Mode } from "./rectifier-processor.types";
 
 class RectifierProcessor extends StoppableAudioWorkletProcessor {
   stepFunction: (value: number) => number;

@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { useNode } from "hooks/state/useNodeStore";
-import Node from "components/Node";
-import Toggle from "components/controls/Toggle";
-import useGainNode from "hooks/nodes/useGainNode";
+import { useNode } from "../../hooks/state/useNodeStore";
+import Node from "../../components/Node";
+import Toggle from "../../components/controls/Toggle";
+import useGainNode from "../../hooks/nodes/useGainNode";
 
 function InputSwitch({ data, id, selected, type: nodeType }: NodeProps) {
   const { input = "A", onChange } = data;

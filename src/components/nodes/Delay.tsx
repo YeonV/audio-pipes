@@ -1,7 +1,7 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
-import useDelayNode from "hooks/nodes/useDelayNode";
+import Node from "../../components/Node";
+import useDelayNode from "../../hooks/nodes/useDelayNode";
 
 function clampDelayTime(delayTime: number) {
   return Math.max(0.001, Math.min(179.999, delayTime));

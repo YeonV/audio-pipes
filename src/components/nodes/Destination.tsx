@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
-import useDestinationNode from "hooks/nodes/useDestinationNode";
+import Node from "../../components/Node";
+import useDestinationNode from "../../hooks/nodes/useDestinationNode";
 
 function Destination({ id, type, selected }: NodeProps) {
   useDestinationNode(id);

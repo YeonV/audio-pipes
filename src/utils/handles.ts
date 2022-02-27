@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { Connection, Edge } from "react-flow-renderer";
-import { AnyAudioNode, isComplexAudioNode, useNodeStore } from "hooks/state/useNodeStore";
-import { nodeCleanup } from "hooks/state/useNodeStore";
+import { AnyAudioNode, isComplexAudioNode, useNodeStore } from "../hooks/state/useNodeStore";
+import { nodeCleanup } from "../hooks/state/useNodeStore";
 
 function getChannelIndex(handle: string): number {
   return +(handle.match(/-(\d+)$/)?.[1] ?? 0);

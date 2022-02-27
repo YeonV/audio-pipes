@@ -1,6 +1,6 @@
 import { DependencyList } from "react";
-import { useNode } from "hooks/state/useNodeStore";
-import { AudioWorkletNode, IAudioWorkletNodeOptions } from "utils/audioContext";
+import { useNode } from "../../hooks/state/useNodeStore";
+import { AudioWorkletNode, IAudioWorkletNodeOptions } from "../../utils/audioContext";
 
 function useAudioWorkletNode(
   id: string,

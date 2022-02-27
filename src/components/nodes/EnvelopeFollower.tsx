@@ -1,9 +1,9 @@
-import Node from "components/Node";
-import { useNode } from "hooks/state/useNodeStore";
-import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
+import Node from "../../components/Node";
+import { useNode } from "../../hooks/state/useNodeStore";
+import useAudioWorkletNode from "../../hooks/nodes/useAudioWorkletNode";
 import React, { useEffect } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { ParameterDefaults, Parameters } from "worklets/envelope-follower.types";
+import { ParameterDefaults, Parameters } from "../../worklets/envelope-follower.types";
 
 interface EnvelopeFollowerNode {
   [Parameters.AttackTime]: AudioParam;

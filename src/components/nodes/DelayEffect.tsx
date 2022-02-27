@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { useNode } from "hooks/state/useNodeStore";
-import Node from "components/Node";
-import Slider, { SliderType } from "components/controls/Slider";
-import useDelayNode from "hooks/nodes/useDelayNode";
-import useGainNode from "hooks/nodes/useGainNode";
-import { float32toDb } from "utils/units";
+import { useNode } from "../../hooks/state/useNodeStore";
+import Node from "../../components/Node";
+import Slider, { SliderType } from "../../components/controls/Slider";
+import useDelayNode from "../../hooks/nodes/useDelayNode";
+import useGainNode from "../../hooks/nodes/useGainNode";
+import { float32toDb } from "../../utils/units";
 
 function DelayEffect({ data, id, selected, type }: NodeProps) {
   const { delayTime = 0.2, feedback = 0.7, mix = 0.5, onChange } = data;

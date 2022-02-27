@@ -1,10 +1,10 @@
 import React, { useCallback } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { useNode } from "hooks/state/useNodeStore";
-import Node from "components/Node";
-import Note from "components/Note";
-import useConstantSourceNode from "hooks/nodes/useConstantSourceNode";
-import { getNoteFrequency } from "utils/notes";
+import { useNode } from "../../hooks/state/useNodeStore";
+import Node from "../../components/Node";
+import Note from "../../components/Note";
+import useConstantSourceNode from "../../hooks/nodes/useConstantSourceNode";
+import { getNoteFrequency } from "../../utils/notes";
 import "./Keyboard.css";
 
 const keysOptions = [16, 28, 40, 64, 88];

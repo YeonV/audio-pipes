@@ -1,7 +1,7 @@
-import useImmediateUpdateEffect from "hooks/useImmediateUpdateEffect";
-import { useNode } from "hooks/state/useNodeStore";
+import useImmediateUpdateEffect from "../../hooks/useImmediateUpdateEffect";
+import { useNode } from "../../hooks/state/useNodeStore";
 import { useEffect } from "react";
-import { TOscillatorType } from "utils/audioContext";
+import { TOscillatorType } from "../../utils/audioContext";
 
 interface Options {
   detune?: number;

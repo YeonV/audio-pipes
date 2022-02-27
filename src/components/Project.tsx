@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useProject } from "hooks/state/useProject";
-import logo from "logo.svg";
-import { ProjectStateData } from "types/Project";
+import { useProject } from "../hooks/state/useProject";
+import logo from "../logo.svg";
+import { ProjectStateData } from "../types/Project";
 
 const textareaStyles: React.CSSProperties = {
   fontSize: 12,

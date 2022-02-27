@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
-import useConstantSourceNode from "hooks/nodes/useConstantSourceNode";
+import Node from "../../components/Node";
+import useConstantSourceNode from "../../hooks/nodes/useConstantSourceNode";
 
 function Gate({ data, id, type }: NodeProps) {
   const { isOn = false, onChange } = data;

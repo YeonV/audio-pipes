@@ -1,7 +1,7 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
-import useStereoPannerNode from "hooks/nodes/useStereoPannerNode";
+import Node from "../../components/Node";
+import useStereoPannerNode from "../../hooks/nodes/useStereoPannerNode";
 
 function StereoPanner({ data, id, selected, type }: NodeProps) {
   const { pan = 0, onChange } = data;

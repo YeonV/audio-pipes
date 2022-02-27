@@ -1,7 +1,7 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
-import useDynamicsCompressorNode from "hooks/nodes/useDynamicsCompressorNode";
+import Node from "../../components/Node";
+import useDynamicsCompressorNode from "../../hooks/nodes/useDynamicsCompressorNode";
 
 function DynamicsCompressor({ data, id, selected, type }: NodeProps) {
   const { attack = 0.003, knee = 30, onChange, ratio = 12, release = 0.25, threshold = -24 } = data;

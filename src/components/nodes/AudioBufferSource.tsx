@@ -1,8 +1,8 @@
 import React, { useCallback, useRef } from "react";
 import { NodeProps } from "react-flow-renderer";
-import { useNode } from "hooks/state/useNodeStore";
-import Node from "components/Node";
-import { AudioBufferSourceNode } from "utils/audioContext";
+import { useNode } from "../../hooks/state/useNodeStore";
+import Node from "../../components/Node";
+import { AudioBufferSourceNode } from "../../utils/audioContext";
 
 function AudioBufferSource({ data, id, selected, type }: NodeProps) {
   const { loop = true, onChange } = data;

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { NodeProps } from "react-flow-renderer";
 import produce from "immer";
-import { useNode } from "hooks/state/useNodeStore";
-import Node from "components/Node";
-import useBiquadFilterNode from "hooks/nodes/useBiquadFilterNode";
-import useGainNode from "hooks/nodes/useGainNode";
-import { AudioNode } from "utils/audioContext";
+import { useNode } from "../../hooks/state/useNodeStore";
+import Node from "../../components/Node";
+import useBiquadFilterNode from "../../hooks/nodes/useBiquadFilterNode";
+import useGainNode from "../../hooks/nodes/useGainNode";
+import { AudioNode } from "../../utils/audioContext";
 
 // const BANDS_WINAMP = [60, 170, 310, 600, 1000, 3000, 6000, 12000, 14000, 16000];
 const BANDS_OCTAVES = [32, 64, 125, 250, 500, 1000, 2000, 4000, 8000, 16000];

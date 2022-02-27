@@ -1,7 +1,7 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
-import useOscillatorNode from "hooks/nodes/useOscillatorNode";
+import Node from "../../components/Node";
+import useOscillatorNode from "../../hooks/nodes/useOscillatorNode";
 
 function Oscillator({ data, id, selected, type: nodeType }: NodeProps) {
   const { detune = 0, frequency = 440, onChange, type = "sine" } = data;

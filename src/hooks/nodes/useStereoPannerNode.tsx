@@ -1,5 +1,5 @@
-import useImmediateUpdateEffect from "hooks/useImmediateUpdateEffect";
-import { useNode } from "hooks/state/useNodeStore";
+import useImmediateUpdateEffect from "../../hooks/useImmediateUpdateEffect";
+import { useNode } from "../../hooks/state/useNodeStore";
 
 interface Options {
   pan?: number;

@@ -1,6 +1,6 @@
-import useImmediateUpdateEffect from "hooks/useImmediateUpdateEffect";
-import { useNode } from "hooks/state/useNodeStore";
-import { TOverSampleType } from "utils/audioContext";
+import useImmediateUpdateEffect from "../../hooks/useImmediateUpdateEffect";
+import { useNode } from "../../hooks/state/useNodeStore";
+import { TOverSampleType } from "../../utils/audioContext";
 
 interface Options {
   curve?: Float32Array | null;

@@ -1,9 +1,9 @@
-import { getDefaultProject } from "utils/defaultProject";
+import { getDefaultProject } from "../../utils/defaultProject";
 import create from "zustand";
 import { ElementId, Elements, FlowElement, FlowTransform, isNode } from "react-flow-renderer";
-import { ProjectStateData } from "types/Project";
+import { ProjectStateData } from "../../types/Project";
 import { persist } from "zustand/middleware";
-import { storage } from "utils/storage";
+import { storage } from "../../utils/storage";
 
 export type ProjectState = ProjectStateData & {
   set: (data: ProjectStateData) => void;

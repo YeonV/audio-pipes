@@ -1,5 +1,5 @@
 import React from "react";
-import { getNoteFrequency, getNoteName } from "utils/notes";
+import { getNoteFrequency, getNoteName } from "../utils/notes";
 
 interface Props {
   detailed?: boolean;

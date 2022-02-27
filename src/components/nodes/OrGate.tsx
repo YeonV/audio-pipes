@@ -1,7 +1,7 @@
 import React from "react";
 import { NodeProps } from "react-flow-renderer";
-import Node from "components/Node";
-import useAudioWorkletNode from "hooks/nodes/useAudioWorkletNode";
+import Node from "../../components/Node";
+import useAudioWorkletNode from "../../hooks/nodes/useAudioWorkletNode";
 
 function OrGate({ id, type }: NodeProps) {
   useAudioWorkletNode(id, "or-gate-processor", { numberOfInputs: 2 });
