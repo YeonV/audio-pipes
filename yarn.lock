@@ -4136,6 +4136,13 @@ esrecurse@^4.3.0:
   dependencies:
     estraverse "^5.2.0"
 
+essentia.js@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/essentia.js/-/essentia.js-0.1.3.tgz#54d0409845a0add3d42fde109d24dc24617e66eb"
+  integrity sha512-vVEPgeVMEBLRXbM5o5H5Rgu53EPHu25vyFKYg+flWLzI/nEoegJQez9FKRv8GR/KxIBwm+fXDEFL+MkQeoHaLw==
+  dependencies:
+    node-wav "0.0.2"
+
 estraverse@^4.1.1:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.3.0.tgz#398ad3f3c5a24948be7725e83d11a7de28cdbd1d"
@@ -6131,6 +6138,11 @@ node-releases@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.2.tgz#7139fe71e2f4f11b47d4d2986aaf8c48699e0c01"
   integrity sha512-XxYDdcQ6eKqp/YjI+tb2C5WM2LgjnZrfYg4vgQt49EK268b6gYCHsBLrK2qvJo4FmCtqmKezb0WZFK4fkrZNsg==
+
+node-wav@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/node-wav/-/node-wav-0.0.2.tgz#89cb63cf8cd66ec8ab455f5ba4864e5fcb4605e8"
+  integrity sha1-ictjz4zWbsirRV9bpIZOX8tGBeg=
 
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
@@ -8587,6 +8599,11 @@ warning@^4.0.2:
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   dependencies:
     loose-envify "^1.0.0"
+
+wasm-ring-buffer@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/wasm-ring-buffer/-/wasm-ring-buffer-1.0.3.tgz#8c4523626090f3440f9c000dc63111fd2716dc33"
+  integrity sha512-3pkkD6DAtC3upy/dzcZQyZyvl+GewZNtdtvzu+Df9crm8/budgz+20/eouKb2KIK2YRK6UV1QsUIx3jsGpNI9Q==
 
 watchpack@^2.3.1:
   version "2.3.1"

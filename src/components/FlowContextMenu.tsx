@@ -74,6 +74,7 @@ const items = [
       { label: "Analyser", node: "Analyser" },
       { label: "Meter", node: "Meter" },
       { label: "Aubio", node: "Aubio" },
+      { label: "Essentia", node: "Essentia"}
     ],
     label: "Analysers",
   },

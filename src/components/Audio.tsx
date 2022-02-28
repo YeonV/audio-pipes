@@ -19,6 +19,7 @@ import SignWorkletProcessor from "worklet-loader!../worklets/sign-processor.work
 import TransformerWorkletProcessor from "worklet-loader!../worklets/transformer-processor.worklet.ts";
 import XorGateWorkletProcessor from "worklet-loader!../worklets/xor-gate-processor.worklet.ts";
 import AubioWorkletProcessor from "worklet-loader!../worklets/aubio-processor.worklet.ts";
+import EssentiaWorkletProcessor from "worklet-loader!../worklets/essentia-processor.worklet.ts";
 
 interface Props {
   children: React.ReactNode;
@@ -51,7 +52,8 @@ function Audio({ children }: Props) {
         context.audioWorklet.addModule(TransformerWorkletProcessor),
         context.audioWorklet.addModule(XorGateWorkletProcessor),
         context.audioWorklet.addModule(AubioWorkletProcessor),
-      ]);
+        context.audioWorklet.addModule(EssentiaWorkletProcessor)
+    ]);
       setReady(true);
     };
 

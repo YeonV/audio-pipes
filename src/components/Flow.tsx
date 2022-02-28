@@ -30,6 +30,7 @@ import OutputSwitch from "./nodes/OutputSwitch";
 import Quantizer from "./nodes/Quantizer";
 import Rectifier from "./nodes/Rectifier";
 import Aubio from "./nodes/Aubio";
+import Essentia from "./nodes/Essentia";
 import AudioDeviceSource from "./nodes/AudioDeviceSource";
 import SampleAndHold from "./nodes/SampleAndHold";
 import Sign from "./nodes/Sign";
@@ -67,6 +68,7 @@ const nodeTypes = {
   Analyser: Analyser,
   AndGate: AndGate,
   Aubio: Aubio,
+  Essentia: Essentia,
   AudioBufferSource: AudioBufferSource,
   AudioDeviceSource: AudioDeviceSource,
   BiquadFilter: BiquadFilter,

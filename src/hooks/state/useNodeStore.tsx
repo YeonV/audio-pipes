@@ -4,6 +4,7 @@ import { AudioContext, AudioNode } from "../../utils/audioContext";
 import { connectNodes, disconnectNodes } from "../../utils/handles";
 import { useAudioContext } from "./useAudioContext";
 import create from "zustand";
+import { devtools } from 'zustand/middleware'
 
 export type ComplexAudioNode<
   Input extends AudioNode | undefined,
@@ -55,7 +56,7 @@ export function nodeCleanup(node: AnyAudioNode) {
   }
 }
 
-export const useNodeStore = create<NodeContextType>((set, get) => ({
+export const useNodeStore = create<NodeContextType>(devtools((set, get) => ({
   nodes: {},
   addNode: (id, node) => {
     set(state => ({
@@ -73,7 +74,7 @@ export const useNodeStore = create<NodeContextType>((set, get) => ({
       nodes: Object.fromEntries(Object.entries(state.nodes).filter(([key]) => key === id)),
     }));
   },
-}));
+})));
 
 export function useNode<T extends AudioNode>(
   id: string,
